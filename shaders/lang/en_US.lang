@@ -16,6 +16,20 @@ screen.MATERIALS=Materials
 screen.PARALLAX=Parallax (POM)
 screen.DH=Distant Horizons
 screen.DEBUG=Development
+screen.SUNLIGHT=Sunlight & Ambient
+screen.BLOCK_LIGHTING=Block Lighting
+screen.NIGHT_LIGHTING=Night Lighting
+screen.HANDLIGHT=Handheld Light
+screen.SKY=Sky & Clouds
+screen.FOG=Fog & Haze
+screen.GODRAYS=Godrays
+screen.REFLECTIONS=Reflections
+screen.SURFACE=Water Surface
+screen.UNDERWATER=Underwater Effects
+screen.EXPOSURE=Exposure & Tone
+screen.BLOOM=Bloom
+screen.AA_AO=Anti-Aliasing & AO
+screen.PBR_TWEAKS=Material Controls
 
 profile.potato=§cPotato
 profile.toaster=§6Toaster
@@ -117,8 +131,26 @@ value.EXPOSURE.78=7.8
 value.EXPOSURE.79=7.9
 value.EXPOSURE.80=8.0
 
+option.AUTO_EXPOSURE=Auto Exposure
+option.AUTO_EXPOSURE.comment=Automatically adapts the image brightness between bright days and dark nights. §2Imperceptible performance impact.
+
+option.AUTO_EXPOSURE_DAY=Day Exposure Target
+option.AUTO_EXPOSURE_DAY.comment=Exposure level used when the sun is visible. §9No performance impact!
+
+option.AUTO_EXPOSURE_NIGHT=Night Exposure Target
+option.AUTO_EXPOSURE_NIGHT.comment=Exposure level used when the sun is hidden. §9No performance impact!
+
 option.AMBIENT_STRENGTH=Ambient Light Strength
 option.AMBIENT_STRENGTH.comment=The minimum amount of light there can be in any situation. §9No performance impact!
+
+option.SUN_INTENSITY=Sunlight Intensity
+option.SUN_INTENSITY.comment=Controls how bright direct sunlight appears. §9No performance impact!
+
+option.SKYLIGHT_GLOBAL=Skylight Intensity
+option.SKYLIGHT_GLOBAL.comment=Scales the overall brightness from skylight. §9No performance impact!
+
+option.SKY_DIFFUSE_MULT=Sky Diffuse Balance
+option.SKY_DIFFUSE_MULT.comment=Balances how much sky light fills shaded areas. §9No performance impact!
 
 option.FLOODFILL=Colored Blocklight
 option.FLOODFILL.comment=Makes the light emitted by blocks match their color. Requires §eshadows §fto be enabled. §6Moderate performance impact.
@@ -128,6 +160,27 @@ option.EMISSION_STRENGTH.comment=How bright emissives are. §9No performance imp
 
 option.BLOCKLIGHT_STRENGTH=Blocklight Strength
 option.BLOCKLIGHT_STRENGTH.comment=How bright the light emitted by blocks is. §9No performance impact!
+
+option.BLOCKLIGHT_DIFFUSE_MULT=Blocklight Diffuse Strength
+option.BLOCKLIGHT_DIFFUSE_MULT.comment=Controls how much block light spreads across nearby surfaces. §9No performance impact!
+
+option.NIGHT_VISIBILITY=Night Visibility Boost
+option.NIGHT_VISIBILITY.comment=Adds extra ambient light during nights so scenes stay readable. §9No performance impact!
+
+option.MOONLIGHT=Moonlight
+option.MOONLIGHT.comment=Enables moonlight contributions during the night. §2Imperceptible performance impact.
+
+option.MOON_INTENSITY=Moonlight Intensity
+option.MOON_INTENSITY.comment=Sets how bright moonlight appears. §9No performance impact!
+
+option.MOON_SHADOWS=Moon Shadows
+option.MOON_SHADOWS.comment=Allows the moon to cast dynamic shadows at night. §2Imperceptible performance impact.
+
+option.NIGHT_SHADOW_CONTRAST=Night Shadow Contrast
+option.NIGHT_SHADOW_CONTRAST.comment=Controls the contrast between lit and shadowed areas at night. §9No performance impact!
+
+option.NIGHT_SHADOW_DARKNESS=Night Shadow Darkness
+option.NIGHT_SHADOW_DARKNESS.comment=Sets the baseline darkness for night shadows. §9No performance impact!
 
 option.ambientOcclusionLevel=Ambient Occlusion Strength
 option.ambientOcclusionLevel.comment=Darkens corners where blocks meet to imitate ambient shadowing. §9No performance impact! §falso affects §eDistant Horizons Ambient Occlusion.
@@ -198,10 +251,31 @@ option.DIRECTIONAL_LIGHTMAPS.comment=Attempts to guess which direction block and
 option.DYNAMIC_HANDLIGHT=Dynamic Handlight
 option.DYNAMIC_HANDLIGHT.comment=Illuminates the area around the player when a light source is held. §2Imperceptible performance impact.
 
+option.HANDLIGHT_STRENGTH=Handlight Strength
+option.HANDLIGHT_STRENGTH.comment=Adjusts how bright the handheld light effect is. §9No performance impact!
+
 option.PBR_MODE=PBR Support
 option.PBR_MODE.comment=LabPBR requires a supported resource pack. §6Moderate performance impact.
 value.PBR_MODE.0=Off
 value.PBR_MODE.1=LabPBR 1.3
+
+option.PBR_ROUGHNESS_MULT=Roughness Multiplier
+option.PBR_ROUGHNESS_MULT.comment=Scales roughness values provided by LabPBR textures. §9No performance impact!
+
+option.PBR_F0_MULT=Specular F0 Multiplier
+option.PBR_F0_MULT.comment=Adjusts the base reflectivity of materials when using LabPBR. §9No performance impact!
+
+option.PBR_SSS_MULT=Subsurface Scattering Multiplier
+option.PBR_SSS_MULT.comment=Controls the strength of subsurface scattering from LabPBR textures. §9No performance impact!
+
+option.AO_STRENGTH=Material AO Strength
+option.AO_STRENGTH.comment=Controls how strongly LabPBR ambient occlusion darkens crevices. §9No performance impact!
+
+option.NORMAL_STRENGTH=Normal Map Strength
+option.NORMAL_STRENGTH.comment=Adjusts the influence of normal maps on the final shading. §9No performance impact!
+
+option.SPECULAR_INTENSITY=Specular Intensity
+option.SPECULAR_INTENSITY.comment=Sets the brightness of specular highlights. §9No performance impact!
 
 option.CLOUDS=Clouds
 option.CLOUDS.comment=§aMinimal performance impact.
@@ -218,6 +292,15 @@ option.CLOUD_PLANE_HEIGHT.comment=§9No performance impact!
 option.BLOCKY_CLOUDS=Blocky Clouds
 option.BLOCKY_CLOUDS.comment=Makes clouds have clearly defined square shapes in them. This was originally a bug, but people liked it, so now it's a feature! §9No performance impact!
 
+option.CLOUD_STEPS=Cloud Steps
+option.CLOUD_STEPS.comment=How many samples are taken when raymarching clouds. Higher values smooth out noise at the cost of performance. §6Moderate performance impact.
+
+option.CLOUD_TINT_STRENGTH=Cloud Tint Strength
+option.CLOUD_TINT_STRENGTH.comment=Controls how strongly the sky colour tints the clouds. §9No performance impact!
+
+option.CLOUD_OPACITY=Cloud Opacity
+option.CLOUD_OPACITY.comment=Adjusts how opaque volumetric clouds appear. §9No performance impact!
+
 option.ATMOSPHERIC_FOG=Fog
 option.ATMOSPHERIC_FOG.comment=Makes terrain fade into the distance. §2Imperceptible performance impact.
 
@@ -233,11 +316,26 @@ option.BASE_FOG_DENSITY.comment=The density of §efancy fog§f. §9No performanc
 option.MORNING_FOG_DENSITY=Morning Fog Density
 option.MORNING_FOG_DENSITY.comment=How much the density of §efancy fog§f increases in the morning. §9No performance impact!
 
+option.FOG_DENSITY=Fog Density
+option.FOG_DENSITY.comment=Controls the overall density of distance fog. §9No performance impact!
+
 option.GODRAYS=Godrays (VL)
 option.GODRAYS.comment=Makes objects appear to cast shadows through §efancy fog. §fThe §escreen-space §fmode has a §aminimal performance impact §fbut is less accurate and will disappear if the sun is not on the screen. The §evolumetric §fmode has a §6moderate performance impact, §frequires §eshadows §fto be enabled, and will look bad at lower §eshadow quality §fsettings.
 value.GODRAYS.0=Off
 value.GODRAYS.1=Screen-Space
 value.GODRAYS.2=Volumetric
+
+option.GODRAYS_DENSITY=Godray Density
+option.GODRAYS_DENSITY.comment=Controls how quickly the volumetric light builds up along each sample. §9No performance impact!
+
+option.GODRAYS_DECAY=Godray Decay
+option.GODRAYS_DECAY.comment=Sets how much intensity is lost after each step. §9No performance impact!
+
+option.GODRAYS_EXPOSURE=Godray Exposure
+option.GODRAYS_EXPOSURE.comment=Adjusts the final brightness of volumetric light beams. §9No performance impact!
+
+option.GODRAYS_WEIGHT=Godray Weight
+option.GODRAYS_WEIGHT.comment=Balances how strongly each sample contributes to the beam. §9No performance impact!
 
 option.GODRAYS_SAMPLES=Godray Samples
 option.GODRAYS_SAMPLES.comment=How many samples are taken when rendering godrays. Higher values reduce noise at the cost of performance. §6Moderate performance impact.
@@ -261,6 +359,9 @@ option.WAVE_MODE.comment=How normals are generated for water. §eResource pack �
 value.WAVE_MODE.0=Resource Pack
 value.WAVE_MODE.1=Generated
 value.WAVE_MODE.2=Realistic
+
+option.VANILLA_WATER=Vanilla Water Shading
+option.VANILLA_WATER.comment=Uses vanilla-style water rendering for maximum compatibility. §9No performance impact!
 
 option.CUSTOM_SUN=Resource Pack Sun/Moon Fix
 option.CUSTOM_SUN.comment=If this is disabled, the shaderpack attempts to remove the "bloom" around the sun and moon. This can cause issues with custom sky resource packs, so this setting disables it. §2Imperceptible performance impact.
@@ -299,11 +400,26 @@ option.BLOOM_STRENGTH.comment=How much effect the bloom has on the final colour 
 option.BLOOM_QUALITY=Bloom Quality
 option.BLOOM_QUALITY.comment=What percentage of the screen resolution to run bloom at. §6Moderate performance impact.
 
+option.BLOOM_PIXELATION=Pixelated Bloom
+option.BLOOM_PIXELATION.comment=Adds a stylised pixelated bloom. Set to 0 for smooth bloom. §9No performance impact!
+
 option.TEMPORAL_FILTER=Temporal Filtering
 option.TEMPORAL_FILTER.comment=Uses data from previous frames to reduce noise. Can result in blurriness and ghosting. §2Imperceptible performance impact. §7Please don't buy into Threat Interactive's anti TAA campaign. §7He is right that many modern games are using it as a crutch but has no credibility and does not understand graphics programming. §7The real issue is that most studios do not give developers the time necessary to properly optimise their games.
 
 option.FXAA=FXAA
 option.FXAA.comment=Anti-aliasing - removes jagged edges. §aMinimal performance impact.
+
+option.SSAO=Screen Space Ambient Occlusion
+option.SSAO.comment=Adds lightweight ambient occlusion in screen space for extra contact shadows. §6Moderate performance impact.
+
+option.SSAO_RADIUS=SSAO Radius
+option.SSAO_RADIUS.comment=Sets the sampling radius used for SSAO. §9No performance impact!
+
+option.SSAO_INTENSITY=SSAO Intensity
+option.SSAO_INTENSITY.comment=Controls how dark the SSAO contribution appears. §9No performance impact!
+
+option.SSAO_SAMPLES=SSAO Samples
+option.SSAO_SAMPLES.comment=How many samples are taken for SSAO. Higher values reduce noise at the cost of performance. §6Moderate performance impact.
 
 option.WAVING_BLOCKS=Waving Blocks
 option.WAVING_BLOCKS.comment=Makes plants sway in the breeze. §aMinimal performance impact.
